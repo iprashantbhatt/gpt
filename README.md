@@ -1,6 +1,6 @@
 # ✦ PrashantGPT
 
-> A liquid-glass AI assistant built by **Prashant Bhatt** — banker, digital explorer & tech innovator from Dehradun, India.
+> A liquid-glass AI assistant built by **Prashant Bhatt** — banker, digital explorer & tech enthusiastic from Dehradun, India.
 
 ![PrashantGPT](https://img.shields.io/badge/AI-PrashantGPT-blue?style=for-the-badge)
 ![Model](https://img.shields.io/badge/Model-Nvidia%20Nemotron-green?style=for-the-badge)
