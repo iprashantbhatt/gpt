@@ -1,4 +1,4 @@
-const CACHE_NAME = 'prashantgpt-v1';
+const CACHE_NAME = 'prashantgpt-v2';
 const STATIC_FILES = [
   '/',
   '/index.html',
