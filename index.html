@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>PrashantGPT</title>
 
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#7c3aed">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PrashantGPT">
+<link rel="apple-touch-icon" href="/logo.png">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -302,5 +309,5 @@ function toggleTopic(el){el.classList.toggle('selected');const t=el.textContent.
 async function generatePrompt(){const btn=document.getElementById('generateBtn');btn.textContent='⏳ Generating…';btn.disabled=true;try{const res=await fetch(`${API_BASE}/api/generate-prompt`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topics:[...selectedTopics],context:document.getElementById('promptContext').value.trim()})});const data=await res.json();if(!res.ok)throw new Error(data.error);lastGeneratedPrompt=data.prompt;document.getElementById('generatedPromptText').textContent=lastGeneratedPrompt;document.getElementById('generatedPrompt').classList.add('show');document.getElementById('usePromptBtn').style.display='';btn.style.display='none';}catch(e){btn.textContent='✦ Generate Prompt';btn.disabled=false;}}
 function useGeneratedPrompt(){if(!lastGeneratedPrompt)return;closeModal();input.value=lastGeneratedPrompt;autoResize(input);sendBtn.disabled=false;input.focus();selectedTopics.clear();document.querySelectorAll('.topic-chip').forEach(c=>c.classList.remove('selected'));document.getElementById('promptContext').value='';}
 </script>
-<script>async function checkAuth(){try{const r=await fetch("/auth/me");const d=await r.json();const lb=document.getElementById("login-btn");const ui=document.getElementById("user-info");if(!lb||!ui)return;if(d.loggedIn){lb.style.display="none";ui.style.display="inline-flex";const av=document.getElementById("user-avatar");const un=document.getElementById("user-name");if(av)av.src=d.user.avatar||"";if(un)un.textContent=d.user.name||"");}else{lb.style.display="inline-flex";ui.style.display="none";}}catch(e){console.warn(e);}};document.addEventListener("DOMContentLoaded",checkAuth);</script></body>
+<script>async function checkAuth(){try{const r=await fetch("/auth/me");const d=await r.json();const lb=document.getElementById("login-btn");const ui=document.getElementById("user-info");if(!lb||!ui)return;if(d.loggedIn){lb.style.display="none";ui.style.display="inline-flex";const av=document.getElementById("user-avatar");const un=document.getElementById("user-name");if(av)av.src=d.user.avatar||"";if(un)un.textContent=d.user.name||"");}else{lb.style.display="inline-flex";ui.style.display="none";}}catch(e){console.warn(e);}};document.addEventListener("DOMContentLoaded",checkAuth);</script><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(r=>console.log("SW registered")).catch(e=>console.warn("SW failed",e));});}</script></body>
 </html>
