@@ -114,7 +114,7 @@ body{height:100vh;height:-webkit-fill-available;background:var(--bg-base);color:
 .welcome-title{font-size:36px;font-weight:700;letter-spacing:-1px;position:relative;display:inline-block;background:linear-gradient(90deg,var(--ta) 0%,var(--tb) 28%,var(--tc) 58%,var(--td) 82%,var(--ta) 100%);background-size:220% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;filter:drop-shadow(0 2px 18px color-mix(in srgb,var(--tb) 55%,transparent))}
 .welcome p{font-size:14px;color:var(--text-secondary);max-width:340px;line-height:1.6}
 .chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;max-width:500px}
-.chip{padding:7px 14px;border-radius:999px;background:var(--chip-bg);border:1px solid var(--chip-bd);font-size:12px;color:var(--text-secondary);cursor:pointer;transition:all .2s;font-family:inherit;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.chip{padding:7px 14px;border-radius:999px;background:var(--chip-bg);border:1px solid var(--chip-bd);font-size:12px;color:var(--text-secondary);cursor:pointer;transition:all .2s;font-family:inherit;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 var(--glass-highlight),0 2px 8px var(--glass-shadow)}
 .chip:hover{background:var(--glass-highlight);color:var(--text-primary);transform:translateY(-2px)}
 .msg-row{display:flex;padding:6px 16px;animation:fadeUp .3s ease both;max-width:860px;width:100%;margin:0 auto}
 .msg-row.user{justify-content:flex-end}.msg-row.ai{justify-content:flex-start}
