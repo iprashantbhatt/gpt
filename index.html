@@ -143,7 +143,7 @@ textarea::placeholder{color:var(--text-muted)}
 .search-toggle-btn{display:flex;align-items:center;gap:5px;padding:7px 12px;border-radius:999px;background:linear-gradient(135deg,color-mix(in srgb,#0ea5e9 26%,transparent),color-mix(in srgb,#14b8a6 26%,transparent));border:1px solid color-mix(in srgb,#0ea5e9 42%,transparent);color:#0ea5e9;font-size:11px;font-weight:600;cursor:pointer;transition:all .25s;font-family:inherit;white-space:nowrap;backdrop-filter:blur(10px)}
 .search-toggle-btn svg{width:12px;height:12px;flex-shrink:0}
 .search-toggle-btn.active{background:linear-gradient(135deg,#0ea5e9,#14b8a6);color:#fff;border-color:transparent;box-shadow:0 0 0 3px color-mix(in srgb,#0ea5e9 20%,transparent)}
-.send-btn{width:34px;height:34px;border-radius:10px;background:var(--send-bg);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;flex-shrink:0}
+.send-btn{width:34px;height:34px;border-radius:10px;background:var(--send-bg);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;flex-shrink:0}.send-btn:not(:disabled){animation:sendPulse 2s ease-in-out infinite;box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 40%,transparent)}@keyframes sendPulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 40%,transparent)}70%{box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 0%,transparent)}100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 0%,transparent)}}
 .send-btn:disabled{opacity:.35;cursor:not-allowed}
 .send-btn svg{color:#fff}
 .input-toolbar{display:none}
