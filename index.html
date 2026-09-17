@@ -277,7 +277,7 @@ textarea::placeholder{color:var(--text-muted)}
 <script>
 const API_BASE='';
 let conversationHistory=[],isStreaming=false,selectedTopics=new Set(),lastGeneratedPrompt='',searchModeOn=false;
-const input=document.getElementById('msgInput'),sendBtn=document.getElementById('sendBtn'),imgBtn=document.getElementById('imgBtn');
+const input=document.getElementById('msgInput'),sendBtn=document.getElementById('sendBtn'),imgBtn=document.getElementById('imgBtn');const placeholders=["Message PrashantGPT…","Ask me anything…","Explore blockchain…","Talk finance with me…","What's on your mind?","Try ✦ Prompt for ideas…"];let phIndex=0;setInterval(()=>{if(document.activeElement!==input){phIndex=(phIndex+1)%placeholders.length;input.placeholder=placeholders[phIndex];}},3000);
 input.addEventListener('input',()=>{sendBtn.disabled=input.value.trim()===''||isStreaming;});
 function autoResize(el){el.style.height="auto";el.style.height=Math.min(el.scrollHeight,80)+"px";}
 function handleKey(e){if((e.key==='Enter'&&e.metaKey)||(e.key==='Enter'&&!e.shiftKey&&window.innerWidth>640)){e.preventDefault();if(!sendBtn.disabled)sendMessage();}}
