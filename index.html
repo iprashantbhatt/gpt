@@ -26,11 +26,11 @@
 html{height:100%;height:-webkit-fill-available}
 body{height:100vh;height:-webkit-fill-available;background:var(--bg-base);color:var(--text-primary);font-family:'Figtree',-apple-system,BlinkMacSystemFont,sans-serif;font-weight:400;overflow:hidden;transition:background .5s,color .35s}
 .bg{position:fixed;inset:0;z-index:0;background:var(--bg-grad);transition:background .5s;overflow:hidden}
-.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.6;animation:drift 13s ease-in-out infinite}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.6}.orb1{animation:drift 13s ease-in-out infinite}.orb2{animation:drift2 17s ease-in-out infinite}.orb3{animation:drift3 11s ease-in-out infinite}
 .orb1{width:540px;height:540px;background:var(--orb1);top:-130px;left:-110px;animation-delay:0s}
 .orb2{width:440px;height:440px;background:var(--orb2);bottom:-130px;right:-90px;animation-delay:-5s}
 .orb3{width:330px;height:330px;background:var(--orb3);top:36%;left:50%;animation-delay:-9s;opacity:.35}
-@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-18px) scale(1.04)}66%{transform:translate(-18px,28px) scale(.96)}}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1) rotate(0deg)}25%{transform:translate(35px,-25px) scale(1.08) rotate(3deg)}50%{transform:translate(-15px,30px) scale(0.94) rotate(-2deg)}75%{transform:translate(20px,15px) scale(1.05) rotate(1deg)}}@keyframes drift2{0%,100%{transform:translate(0,0) scale(1) rotate(0deg)}25%{transform:translate(-30px,20px) scale(1.06) rotate(-3deg)}50%{transform:translate(25px,-20px) scale(0.95) rotate(2deg)}75%{transform:translate(-15px,-10px) scale(1.03) rotate(-1deg)}}@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(15px,25px) scale(1.1)}66%{transform:translate(-20px,-15px) scale(0.92)}}
 .app{position:relative;z-index:1;display:flex;width:100%;height:100vh;height:-webkit-fill-available;overflow:hidden}
 .sidebar{width:260px;min-width:260px;display:flex;flex-direction:column;padding:20px 14px 16px;border-right:1px solid var(--sidebar-border);background:var(--sidebar-bg);backdrop-filter:blur(48px) saturate(180%);-webkit-backdrop-filter:blur(48px) saturate(180%);gap:8px;overflow:hidden;transition:background .45s,border-color .45s}
 .logo{display:flex;align-items:center;gap:10px;padding:6px 6px 16px;border-bottom:1px solid var(--divider);margin-bottom:4px}
