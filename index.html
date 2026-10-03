@@ -276,7 +276,7 @@ textarea::placeholder{color:var(--text-muted)}
 </div>
 <script>
 const API_BASE='';
-let conversationHistory=[],isStreaming=false,selectedTopics=new Set(),lastGeneratedPrompt='',searchModeOn=false;
+let conversationHistory=[],isStreaming=false,selectedTopics=new Set(),lastGeneratedPrompt='',searchModeOn=false;function saveHistory(){try{localStorage.setItem("pgpt_history",JSON.stringify(conversationHistory.slice(-20)));}catch(e){}}function loadHistory(){try{const h=localStorage.getItem("pgpt_history");return h?JSON.parse(h):[];}catch(e){return[];}}conversationHistory=loadHistory();
 const input=document.getElementById('msgInput'),sendBtn=document.getElementById('sendBtn'),imgBtn=document.getElementById('imgBtn');const placeholders=["Message PrashantGPT…","Ask me anything…","Explore blockchain…","Talk finance with me…","What's on your mind?","Try ✦ Prompt for ideas…"];let phIndex=0;setInterval(()=>{if(document.activeElement!==input){phIndex=(phIndex+1)%placeholders.length;input.placeholder=placeholders[phIndex];}},3000);
 input.addEventListener('input',()=>{sendBtn.disabled=input.value.trim()===''||isStreaming;const cc=document.getElementById('charCount');if(cc){const len=input.value.length;cc.style.display=len>0?'block':'none';cc.textContent=len;cc.className='char-count'+(len>800?' danger':len>500?' warn':'')}});
 function autoResize(el){el.style.height="auto";el.style.height=Math.min(el.scrollHeight,80)+"px";}
